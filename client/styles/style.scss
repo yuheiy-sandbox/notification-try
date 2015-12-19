@@ -1,0 +1,20 @@
+@import 'foundation';
+
+$button-margin: 0;
+
+@include foundation-everything;
+
+.standing,
+.taken,
+.notify {
+  font-weight: bold;
+}
+
+.standing,
+.notify {
+  color: $success-color;
+}
+
+.taken {
+  color: $alert-color;
+}

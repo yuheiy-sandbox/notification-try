@@ -1,0 +1,40 @@
+extends ../_layout
+
+block content
+  div.column.row
+    h1 login
+
+    each message in error
+      p(style='color: red;')= message
+
+    form(
+      method='post',
+      action='/admin/login'
+    )
+      input(
+        type='hidden',
+        name='_csrf',
+        value= csrfToken
+      )
+
+      div.row
+        div.medium-6.columns
+          label
+            | Username
+            input(
+              type='text',
+              name='username',
+              placeholder='username',
+              required
+            )
+
+          label
+            | Password
+            input(
+              type='password',
+              name='password',
+              placeholder='password',
+              required
+            )
+
+          button.button(type='submit') login
